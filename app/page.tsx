@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
 import Image from "next/image";
 import backgroundImage from "../public/images/pattern-bg-desktop.png";
 import SearchResult from "@/components/SearchResult";
 import Search from "@/components/Search";
-import Map from "@/components/Map";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
 const data = {
     ipAddress: "192.212.174.101",
@@ -16,6 +16,10 @@ const data = {
 
 export default function Home() {
     const [scrollWheel, setScrollWheel] = useState<boolean>(false);
+
+    const Map = dynamic(() => import("@/components/Map"), {
+        ssr: false
+    });
 
     return (
         <main className="relative w-full h-screen">

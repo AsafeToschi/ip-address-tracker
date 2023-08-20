@@ -5,7 +5,7 @@ import { Icon } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 // import { useMap } from "react-leaflet/hooks";
 
-import { use, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 interface IMapProps {
     scrollWheelZoom?: boolean;
