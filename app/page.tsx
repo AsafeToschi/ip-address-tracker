@@ -15,15 +15,12 @@ const data = {
 }
 
 export default function Home() {
-    const [scrollWheel, setScrollWheel] = useState<boolean>(false);
-
     const Map = dynamic(() => import("@/components/Map"), {
         ssr: false
     });
 
     return (
         <main className="relative w-full h-screen">
-            {/* Search */}
             <div className="relative px-5">
                 <div>
                 <Image
@@ -45,11 +42,9 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Map */}
-            <div className="h-full bg-red-500" onClick={() => setScrollWheel((currentValue) => { console.log(!currentValue); return !currentValue })}>
-                <Map scrollWheelZoom={scrollWheel} />
+            <div className="h-full">
+                <Map />
             </div>
-
         </main>
     )
 }
