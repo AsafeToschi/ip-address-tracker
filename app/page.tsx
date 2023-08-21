@@ -1,11 +1,8 @@
-"use client"
-
 import Image from "next/image";
 import backgroundImage from "../public/images/pattern-bg-desktop.png";
 import SearchResult from "@/components/SearchResult";
 import Search from "@/components/Search";
-import { useState } from "react";
-import dynamic from "next/dynamic";
+import Map from "@/components/Map"; 
 
 const data = {
     ipAddress: "192.212.174.101",
@@ -15,13 +12,9 @@ const data = {
 }
 
 export default function Home() {
-    const Map = dynamic(() => import("@/components/Map"), {
-        ssr: false
-    });
-
     return (
         <main className="relative w-full h-screen">
-            <div className="relative px-5">
+            <div className="relative px-5 shadow-lg z-10">
                 <div>
                 <Image
                     className="object-cover"
@@ -43,7 +36,7 @@ export default function Home() {
             </div>
 
             <div className="h-full">
-                <Map />
+                <Map provider="googleMaps" geolocation={{ lat: 43.731485, lng: 7.415062 }}/>
             </div>
         </main>
     )
