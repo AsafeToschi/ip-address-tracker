@@ -7,12 +7,10 @@ import { GestureHandling } from "leaflet-gesture-handling";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 import { useEffect, useMemo, useState } from "react";
+import { IGeolocation } from "../model";
 
 interface IMapProps {
-    geolocation: {
-        lat: number;
-        lng: number;
-    }; 
+    geolocation: IGeolocation;
 }
 
 export default function LeafletProvider({ geolocation }: IMapProps) {

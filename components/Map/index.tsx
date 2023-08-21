@@ -1,12 +1,10 @@
 import dynamic from "next/dynamic";
 import GoogleMaps from "./providers/GoogleMaps";
+import { IGeolocation } from "./model";
 
 interface IMapProps {
     provider?: string;
-    geolocation: {
-        lat: number;
-        lng: number;
-    }; 
+    geolocation: IGeolocation;
 }
 
 const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY || "EMPTY";
