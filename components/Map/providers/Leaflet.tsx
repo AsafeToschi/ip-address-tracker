@@ -8,6 +8,8 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 import { useEffect, useMemo, useState } from "react";
 import { IGeolocation } from "../model";
+import { FullscreenControl } from "react-leaflet-fullscreen";
+import "react-leaflet-fullscreen/styles.css";
 
 interface IMapProps {
     geolocation: IGeolocation;
@@ -37,11 +39,12 @@ export default function LeafletProvider({ geolocation }: IMapProps) {
     return (
         <MapContainer
             center={[geolocation.lat, geolocation.lng]}
-            zoom={13}
+            zoom={15}
             scrollWheelZoom={false}
             ref={setMap}
             className="h-full"
         >
+            <FullscreenControl position="bottomright" />
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

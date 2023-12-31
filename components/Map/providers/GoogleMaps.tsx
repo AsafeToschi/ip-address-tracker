@@ -49,14 +49,24 @@ const Map: FunctionComponent<IMapProps> = ({ center }) => {
 
     useEffect(() => {
         if (ref.current && !map) {
-            // Init and update map
+            // Init map
+            console.log("map new instance");
             setMap(new google.maps.Map(ref.current, {
                 center: center,
-                zoom: 17,
+                zoom: 16,
                 disableDefaultUI: true,
             }));
         }
     }, [ref, map]);
+
+    useEffect(() => {
+        if (ref.current && map) {
+            // update map
+            console.log("map update");
+            map.panTo(center);
+            map.setZoom(16)
+        }
+    }, [center]);
 
     return (
         <>
@@ -67,6 +77,7 @@ const Map: FunctionComponent<IMapProps> = ({ center }) => {
 }
 
 export default function GoogleMapsProvider({ geolocation, apiKey }: IProviderProps) {
+    console.log("map wrapper render");
     return (
         <Wrapper apiKey={apiKey} libraries={["marker"]}>
             <Map center={geolocation} />

@@ -11,7 +11,7 @@ export default function SearchResult({ ipAddress, location, timezone, isp }: ISe
             relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
             gap-4 sm:gap-0
             text-center sm:text-left
-            bg-white p-10 rounded-2xl shadow-xl translate-y-1/2 -mt-[150px] lg:-mt-21 z-[1000]
+            bg-white p-10 rounded-2xl shadow-xl translate-y-1/2 -mt-[150px] lg:-mt-21
         ">
             <div className="
                 px-0 relative
