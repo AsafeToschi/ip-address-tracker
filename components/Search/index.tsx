@@ -3,7 +3,7 @@
 import ArrowIcon from "@/public/images/icon-arrow.svg";
 import { Dispatch, FormEvent, SetStateAction } from "react";
 import { IGeolocation } from "../Map/model";
-import { defaultMapCenter } from "@/app/page";
+import { defaultMapCenter } from "@/components/Map/data";
 
 interface ISearchProps {
     setMapCenter: Dispatch<SetStateAction<IGeolocation>>

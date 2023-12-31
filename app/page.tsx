@@ -7,6 +7,7 @@ import Search from "@/components/Search";
 import Map from "@/components/Map";
 import { IGeolocation } from "@/components/Map/model";
 import { useState } from "react";
+import { defaultMapCenter } from "@/components/Map/data";
 
 const data = {
     ipAddress: "192.212.174.101",
@@ -15,7 +16,7 @@ const data = {
     isp: "SpaceX Starlink"
 }
 
-export const defaultMapCenter: IGeolocation = { lat: 43.731485, lng: 7.415062 };
+
 
 export default function Home() {
     // const MapContext = createContext({
